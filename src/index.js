@@ -13,13 +13,21 @@ const Square = (props) => {
   );
 };
 
+
 const Board = () => {
   const initinalSquares = Array(9).fill(null)
   const [squares, setSquares] = useState(initinalSquares);
   const [xIsNext, setXIsNext] = useState(true);
 
   const handleClickEvent = (i) => {
-    const newSquares = [...squares];
+    const newSquares = [...squares];;
+
+    const winnerDeclared = Boolean(calculateWinner(newSquares));
+    const squareFilled = Boolean(newSquares[i]);
+    if (winnerDeclared || squareFilled) {
+      return;
+    }
+
     newSquares[i] = xIsNext ? 'X' : 'O';
     setSquares(newSquares);
     setXIsNext(!xIsNext);
@@ -51,6 +59,7 @@ const Board = () => {
       <div className="board-row">
         {renderSquare(6)}{renderSquare(7)}{renderSquare(8)}
         </div>
+        <button className="button" onClick={() => window.location.reload(false)}>New game!</button>
     </div>
   );
 };
