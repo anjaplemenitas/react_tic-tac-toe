@@ -2,15 +2,21 @@ import React from "react";
 import ReactDOM from "react-dom";
 import './index.css';
 
-const Square = () => {
+const Square = (props) => {
   return (
     <div className="square">
-      X
+      {props.value}
     </div>
   );
 };
 
 const Board = () => {
+  const renderSquare = (i) => {
+    return (
+      <Square value={i}/>
+    );
+  };
+
   return (
     <div style={{
       background: 'skyblue',
@@ -19,14 +25,14 @@ const Board = () => {
     }}>
       Board
       <div className="board-row">
-        <Square/><Square/><Square/>
-      </div>
+        {renderSquare(0)}{renderSquare(1)}{renderSquare(2)}
+        </div>
       <div className="board-row">
-        <Square/><Square/><Square/>
-      </div>
+        {renderSquare(3)}{renderSquare(4)}{renderSquare(5)}
+        </div>
       <div className="board-row">
-        <Square/><Square/><Square/>
-      </div>
+        {renderSquare(6)}{renderSquare(7)}{renderSquare(8)}
+        </div>
     </div>
   );
 };
