@@ -4,12 +4,8 @@ import './index.css';
 
 const Square = () => {
   return (
-    <div style={{
-      background: 'gold',
-      margin: 10,
-      padding: 5,
-    }}>
-      Square
+    <div className="square">
+      X
     </div>
   );
 };
@@ -22,18 +18,22 @@ const Board = () => {
       padding: 5,
     }}>
       Board
-      <Square/>
+      <div className="board-row">
+        <Square/><Square/><Square/>
+      </div>
+      <div className="board-row">
+        <Square/><Square/><Square/>
+      </div>
+      <div className="board-row">
+        <Square/><Square/><Square/>
+      </div>
     </div>
   );
 };
 
 const Game = () => {
   return (
-    <div style={{
-      background: 'salmon',
-      margin: 10,
-      padding: 20,
-    }}>
+    <div className="game">
       Game
       <Board/>
     </div>
