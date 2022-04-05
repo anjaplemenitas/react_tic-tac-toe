@@ -6,7 +6,7 @@ const Square = (props) => {
   return (
     <button
       className="square"
-      onClick={() => {}}
+      onClick={props.onClickEvent}
     >
       {props.value}
     </button>
@@ -14,26 +14,31 @@ const Square = (props) => {
 };
 
 const Board = () => {
-  const initinalSquares = [
-    null, null, null,
-    null, null, null,
-    null, null, null
-  ];
+  const initinalSquares = Array(9).fill(null)
   const [squares, setSquares] = useState(initinalSquares);
+  const [xIsNext, setXIsNext] = useState(true);
+
+  const handleClickEvent = (i) => {
+    const newSquares = [...squares];
+    newSquares[i] = xIsNext ? 'X' : 'O';
+    setSquares(newSquares);
+    setXIsNext(!xIsNext);
+  }
 
   const renderSquare = (i) => {
     return (
-      <Square value={squares[i]}/>
+      <Square
+        value={squares[i]}
+        onClickEvent={() => handleClickEvent(i)}
+      />
     );
   };
 
+  const status = `Next player: ${xIsNext ? 'X' : 'O'}`;
+
   return (
-    <div style={{
-      background: 'skyblue',
-      margin: 10,
-      padding: 5,
-    }}>
-      Board
+    <div>
+      <div className="status">{status}</div>
       <div className="board-row">
         {renderSquare(0)}{renderSquare(1)}{renderSquare(2)}
         </div>
