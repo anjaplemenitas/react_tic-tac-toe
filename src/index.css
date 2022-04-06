@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
 body {
-  background-color: #444;
+  background-color: rgb(126, 124, 124);
   color: white;
   margin: 20px;
   font-size: 40px;
@@ -14,20 +16,25 @@ body {
   align-items: center;
 }
 
+.whole-board {
+ padding-top: 20px;
+}
+
 .board-row {
   display: flex;
   flex-flow: row nowrap;
 }
 
 .square {
-  background-color: darkgray;
-  color: white;
-  border: 1px solid #999;
+  background-color: rgb(255, 255, 255);
+  color: rgb(49, 48, 48);
+  border: 10px solid rgb(88, 87, 87);
   padding: 0;
-  font-size: 84px;
+  font-size: 140px;
+  font-family: 'Fredoka One', cursive;
   text-align: center;
-  width: 170px;
-  height: 170px;
+  width: 180px;
+  height: 180px;
 }
 
 .square:focus {
@@ -38,6 +45,11 @@ body {
 .status {
   margin: 20px;
   font-size: 24px;
+  background-color: rgb(88, 87, 87);
+  text-align: center;
+  margin: auto;
+  padding-bottom: 22px;
+  padding-top: 15px;
 }
 
 .btn {
@@ -51,6 +63,7 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   width: 100%;
+  border: 10px solid rgb(88, 87, 87);
 }
 
 .btn-2:hover,
