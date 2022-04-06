@@ -48,8 +48,7 @@ const Board = () => {
   `Next player: ${xIsNext ? 'X' : 'O'}`;
 
   return (
-    <div>
-      <div className="status">{status}</div>
+    <div className="whole-board">
       <div className="board-row">
         {renderSquare(0)}{renderSquare(1)}{renderSquare(2)}
         </div>
@@ -59,7 +58,8 @@ const Board = () => {
       <div className="board-row">
         {renderSquare(6)}{renderSquare(7)}{renderSquare(8)}
         </div>
-        <button className="button" onClick={() => window.location.reload(false)}>New game!</button>
+      <div className="status">{status}</div>
+      <button className="btn btn-2" onClick={() => window.location.reload(false)}>New game!</button>
     </div>
   );
 };
