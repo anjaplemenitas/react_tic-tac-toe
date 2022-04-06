@@ -39,7 +39,7 @@ body {
 
 .square:focus {
   outline: none;
-  background-color: #222;
+  background-color: rgb(113, 113, 113);
 }
 
 .status {
