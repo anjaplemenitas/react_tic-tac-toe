@@ -59,7 +59,8 @@ const Board = () => {
       <div className="board-row">
         {renderSquare(6)}{renderSquare(7)}{renderSquare(8)}
         </div>
-        <button className="button" onClick={() => window.location.reload(false)}>New game!</button>
+        <button className="btn btn-2" onClick={() => window.location.reload(false)}>New game!</button>
+        {/* <button className="button" onClick={() => window.location.reload(false)}>New game!</button> */}
     </div>
   );
 };
